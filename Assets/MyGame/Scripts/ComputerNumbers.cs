@@ -3,22 +3,32 @@ using UnityEngine.UI;
 
 public class ComputerNumbers : MonoBehaviour
 {
-    public InputField ipVarA;
-    public InputField ipVarB;
+    public InputField input1;
+    public InputField input2;
     public Text result;
+
     float varA;
-    float varB; 
+    float varB;
 
     public void SetResult()
     {
-       float a = float.Parse(ipVarA.text);
-       float b = float.Parse(ipVarB.text);
-       Debug.Log("in SetResult" + (a - b));
+        result.text = SubstractNumbers();
     }
 
-    public float SubstractNumbers(float variableA, float variableB)
+    string SubstractNumbers()
     {
-        float result = variableA - variableB;
-        return result; 
+  
+            varA = float.Parse(input1.text);
+            varB = float.Parse(input2.text);
+
+            string success = (varA - varB).ToString();
+            return success;
+        }
+
+    public void ResetCounter()
+    {
+        input1.text = "";
+        input2.text = "";
+        result.text = "";
     }
 }
