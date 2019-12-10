@@ -7,23 +7,22 @@ public class ComputerNumbers : MonoBehaviour
     public InputField input2;
     public Text result;
 
-    float varA;
-    float varB;
+    private float varA;
+    private float varB;
 
     public void SetResult()
     {
         result.text = SubstractNumbers();
     }
 
-    string SubstractNumbers()
+    private string SubstractNumbers()
     {
-  
-            varA = float.Parse(input1.text);
-            varB = float.Parse(input2.text);
+        varA = float.Parse(input1.text);
+        varB = float.Parse(input2.text);
 
-            string success = (varA - varB).ToString();
-            return success;
-        }
+        string success = (varA - varB).ToString();
+        return success;
+    }
 
     public void ResetCounter()
     {
